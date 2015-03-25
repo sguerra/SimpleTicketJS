@@ -31,6 +31,7 @@ export default Backbone.View.extend({
 	},
 
 	changeTicketStatus : function (e) {
+		e.stopPropagation();
 		
 		var newStatus = $(e.currentTarget).data().value;
 		
@@ -39,9 +40,8 @@ export default Backbone.View.extend({
 		this.$('.overlay').hide();	
 	},
 
-	select : function (e) {
-		e.stopPropagation();
-
+	select : function () {
+		
 		Backbone.trigger('load:ticket:detail', this.model);
 	}
 
