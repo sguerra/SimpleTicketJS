@@ -51,12 +51,17 @@ html, body, .panel
 		border none
 	
 	li
+		position relative
 		border none
 		background-color bgcolor
 		padding 0
 		border-top 1px solid #eee
 		list-style none
-		position relative
+		
+		&:hover
+			.status
+				display inline-block
+			
 	
 	.text-wrapper, .status-indicator
 		display inline-block
@@ -64,25 +69,54 @@ html, body, .panel
 	
 	.text-wrapper
 		padding .5em
-		margin-left auto
+		width 90%
+		padding-left 30px
+		
 		
 	.status-indicator
 		position absolute
 		height 100%
-		width 100px
+		width 20px
 		background-color #444
-		text-align center
 		color white
-		line-height 100%
-		
+		cursor pointer
 		
 	h3
 		font-size 18px
 		margin .5em
 		margin-left 0
 
+.status
+	position absolute
+	top 0
+	left 0
+	width 33%
+	height 100%
+	background-color #F9023A
+	opacity .9
+	text-align center
+	color white
+	border-right 2px solid white
+	display none
+	cursor pointer
+	line-height 50px
+	font-weight bold
+	
+	&:nth-child(2)
+		left 33%
+		background-color #FF8600
+	
+	&:nth-child(3)
+		left 66%
+		border-right none
+		background-color #61D432
+
+	
+		
+
 .badge-completed
 	background-color #56D440
 	
 .badge-accepted
 	background-color #68A2D4
+
