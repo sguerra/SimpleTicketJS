@@ -43,6 +43,7 @@ export default Backbone.View.extend({
 		}
 
 		Backbone.trigger('show:tickets:list');
+		this.toggle(false);
 	},
 
 	cancel : function () {
