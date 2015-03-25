@@ -1,5 +1,7 @@
 
-bgcolor = #fff
+open-ticket-color = #F9023A
+working-ticket-color = #FF8600
+closed-ticket-color = #61D432
 
 html, body, .panel
 	height 100%
@@ -82,7 +84,6 @@ html, body, .panel
 		position absolute
 		height 100%
 		width 20px
-		background-color #444
 		color white
 		cursor pointer
 		
@@ -91,13 +92,22 @@ html, body, .panel
 		margin .5em
 		margin-left 0
 
+
+.open
+	background-color open-ticket-color
+
+.working
+	background-color working-ticket-color
+
+.closed
+	background-color closed-ticket-color
+	
 .status
 	position absolute
 	top 0
 	left 0
 	width 33%
 	height 100%
-	background-color #F9023A
 	opacity .9
 	text-align center
 	color white
@@ -109,12 +119,10 @@ html, body, .panel
 	
 	&:nth-child(2)
 		left 33%
-		background-color #FF8600
 	
 	&:nth-child(3)
 		left 66%
 		border-right none
-		background-color #61D432
 
 	
 		
