@@ -1,0 +1,88 @@
+
+bgcolor = #fff
+
+html, body, .panel
+	height 100%
+	width 100%
+	background-color bgcolor
+	
+#main-menu
+	
+	position fixed
+	width 100%
+	top 0
+	left 0
+	z-index 2
+	box-shadow 0 1px 20px 5px #444
+	background-color #FF0C4E
+	
+	.btn-group
+		width 100%
+		
+	.btn
+		border-radius 0
+		height 100%
+		width 50%
+		height 60px
+		font-size 20px
+		background-color #FF0C4E
+		border-color #F80447
+		transition all .3s linear
+
+		&:hover
+			background-color white
+			color #FF0C4E
+			border-color white
+	
+.panel
+	margin-top 70px	
+	border none
+
+.panel-body
+	height 100%
+	widht 100%
+	padding 0
+	
+	ul
+		height 100%
+		margin 0
+		padding 0
+		overflow-y auto
+		border none
+	
+	li
+		border none
+		background-color bgcolor
+		padding 0
+		border-top 1px solid #eee
+		list-style none
+		position relative
+	
+	.text-wrapper, .status-indicator
+		display inline-block
+		vertical-align top
+	
+	.text-wrapper
+		padding .5em
+		margin-left auto
+		
+	.status-indicator
+		position absolute
+		height 100%
+		width 100px
+		background-color #444
+		text-align center
+		color white
+		line-height 100%
+		
+		
+	h3
+		font-size 18px
+		margin .5em
+		margin-left 0
+
+.badge-completed
+	background-color #56D440
+	
+.badge-accepted
+	background-color #68A2D4

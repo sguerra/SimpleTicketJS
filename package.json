@@ -1,0 +1,48 @@
+{
+  "name": "TicketJS",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Simple ticket service",
+  "scripts": {
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "babel": "^4.3.0",
+    "babelify": "^5.0.3",
+    "browser-sync": "^2.2.0",
+    "browserify": "^8.1.3",
+    "browserify-shim": "^3.8.3",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.9.2",
+    "gulp-minify-css": "^0.4.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-stylus": "^2.0.1",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
+    "handlebars": "^3.0.0",
+    "hbsfy": "^2.2.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.3.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      [
+        "hbsfy",
+        {
+          "extensions": [
+            "hbs"
+          ]
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+  }
+}
