@@ -9,7 +9,7 @@ export default Backbone.View.extend({
 		this.$list = this.$('ul');
 		this.collection = new TicketsCollection();
 
-		this.listenTo(Backbone, 'load:ticket:detail', function () {
+		this.listenTo(Backbone, 'load:ticket:detail new:ticket', function () {
 			this.toggle(false);
 		});
 
@@ -17,9 +17,16 @@ export default Backbone.View.extend({
 			this.toggle(true);
 		});
 
+
+		this.listenTo(Backbone, 'save:new:ticket', this.saveNew);
+
 		this.listenTo(this.collection, 'add', this.addOne);
 		this.listenTo(this.collection, 'reset', this.addAll);
 
+	},
+
+	saveNew : function (newModel) {
+		this.collection.create(newModel.toJSON());
 	},
 
 	addOne : function  (model) {

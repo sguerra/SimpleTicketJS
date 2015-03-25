@@ -1,3 +1,5 @@
+import Ticket from '../../model/model';
+
 export default Backbone.View.extend({
 	
 	el : $('#ticket-detail'),
@@ -10,6 +12,7 @@ export default Backbone.View.extend({
 	initialize : function () {
 
 		this.listenTo(Backbone, 'load:ticket:detail', this.reset);
+		this.listenTo(Backbone, 'new:ticket', this.new);
 
 		this.toggle(false);
 		
@@ -23,13 +26,22 @@ export default Backbone.View.extend({
 		this.toggle(true);
 	},
 
+	new : function () {
+		var newModel = new Ticket();
+		console.log('newModel', newModel);
+		this.reset(newModel);
+	},
+
 	formSubmitted: function(e){
 		e.preventDefault();
 
 		var data = Backbone.Syphon.serialize(this);
 		this.model.set(data);
-		
-		this.model.save();
+	
+		if(this.model.isNew()){
+			Backbone.trigger('save:new:ticket', this.model);
+		}
+
 		Backbone.trigger('show:tickets:list');
 	},
 
