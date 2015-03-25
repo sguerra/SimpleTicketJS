@@ -6,7 +6,6 @@ closed-ticket-color = #61D432
 html, body, .panel
 	height 100%
 	width 100%
-	background-color bgcolor
 	
 #main-menu
 	
@@ -36,10 +35,10 @@ html, body, .panel
 			padding-top 0
 			width 15%
 			
-		&:hover
-			background-color white
-			color #FF0C4E
-			border-color white
+			&:hover
+				background-color white
+				color #FF0C4E
+				border-color white
 	
 .panel
 	margin-top 100px	
@@ -64,10 +63,7 @@ html, body, .panel
 		padding 0
 		border-top 1px solid #eee
 		list-style none
-		
-		&:hover
-			.status
-				display inline-block
+		cursor pointer
 			
 	
 	.text-wrapper, .status-indicator
@@ -102,6 +98,9 @@ html, body, .panel
 .closed
 	background-color closed-ticket-color
 	
+.overlay
+	display none
+	
 .status
 	position absolute
 	top 0
@@ -112,10 +111,10 @@ html, body, .panel
 	text-align center
 	color white
 	border-right 2px solid white
-	display none
 	cursor pointer
 	line-height 50px
 	font-weight bold
+
 	
 	&:nth-child(2)
 		left 33%
@@ -132,6 +131,10 @@ html, body, .panel
 	
 .badge-accepted
 	background-color #68A2D4
+
+#ticket-detail
+	background-color #eeeeee
+	padding .5em
 
 @media screen and (min-width: 1200px)
 		

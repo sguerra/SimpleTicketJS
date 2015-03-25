@@ -17,14 +17,45 @@
       </div>  
     </div>
     
-    <div class="panel panel-default main-panel">
+    <div class="panel panel-default main-panel" id="ticket-list">
       <div class="panel-body">
         <ul>
-          
 
         </ul>
       </div>
     </div>
+    <div class="panel panel-default main-panel" id="ticket-detail">
+      <div class="panel-body">
+        <form>
+          <div class="form-group">
+            <label for="title">Titulo</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="titulo" value="" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Descripción</label>
+            <textarea name="description" id="description" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="status">Estado</label>
+            <select name="status" id="status" class="form-control" required>
+                <option value="open">Abierto</option>
+                <option value="working">En progreso</option>
+                <option value="closed">Cerrado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="requester">Solicitante</label>
+            <input type="text" class="form-control" id="requester" name="requester" value="" required>
+          </div>
+          
+          <div class="form-group">
+            <button type="button" class="btn btn-default btn-cancel">Cancelar</button>
+            <button type="submit" class="btn btn-success">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
 
   	<script src="/vendor.js"></script>
   	<script src="/app.js"></script>
