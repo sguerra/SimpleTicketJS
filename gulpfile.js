@@ -36,7 +36,7 @@ var BOWER_JS_DEPENDENCIES = [
 	BOWER_COMPONENTS + '/backbone/backbone.js',
 	BOWER_COMPONENTS + '/backbone.syphon/lib/backbone.syphon.js',
 	BOWER_COMPONENTS + '/firebase/firebase.js',
-	BOWER_COMPONENTS + '/backbonefire/backbonefire.js'
+	BOWER_COMPONENTS + '/backbonefire/dist/backbonefire.js'
 ]
 
 /*GULP TASKS*/
