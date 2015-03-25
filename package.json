@@ -44,5 +44,6 @@
     ]
   },
   "dependencies": {
+    "lodash": "^3.5.0"
   }
 }
