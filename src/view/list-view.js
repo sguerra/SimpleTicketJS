@@ -9,7 +9,13 @@ export default Backbone.View.extend({
 		this.$list = this.$('ul');
 		this.collection = new TicketsCollection();
 
-		console.log('collection', this.collection);
+		this.listenTo(Backbone, 'load:ticket:detail', function () {
+			this.toggle(false);
+		});
+
+		this.listenTo(Backbone, 'show:tickets:list', function () {
+			this.toggle(true);
+		});
 
 		this.listenTo(this.collection, 'add', this.addOne);
 		this.listenTo(this.collection, 'reset', this.addAll);

@@ -42,8 +42,7 @@ export default Backbone.View.extend({
 	select : function (e) {
 		e.stopPropagation();
 
-		listDetailView.reset(this.model);
-		listView.toggle(false);
+		Backbone.trigger('load:ticket:detail', this.model);
 	}
 
 });

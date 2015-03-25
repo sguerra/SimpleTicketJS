@@ -8,9 +8,11 @@ export default Backbone.View.extend({
 	},
 
 	initialize : function () {
-		this.toggle(false);
 
-		listDetailView.reset(this.model);
+		this.listenTo(Backbone, 'load:ticket:detail', this.reset);
+
+		this.toggle(false);
+		
 	},
 
 	reset : function (model) {
@@ -32,7 +34,7 @@ export default Backbone.View.extend({
 
 	cancel : function () {
 		this.toggle(true);
-		listView.toggle(true);
+		Backbone.trigger('show:tickets:list');
 	},
 
 	toggle : function (value) {
