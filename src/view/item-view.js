@@ -20,6 +20,12 @@ export default Backbone.View.extend({
 	render : function () {
 		var data = this.model.toJSON();
 		
+		if(data.date){
+			data.date = moment(data.date).calendar();
+		}else{
+			data.date = '';
+		}
+
 		var html = ItemTemplate(data);
 		this.$el.html(html);
 	},

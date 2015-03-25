@@ -8,6 +8,7 @@
     "backbone": "~1.1.2",
     "firebase": "~2.2.3",
     "backbonefire": "~0.5.1",
-    "backbone.syphon": "~0.6.0"
+    "backbone.syphon": "~0.6.0",
+    "moment": "~2.9.0"
   }
 }

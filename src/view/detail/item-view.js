@@ -28,7 +28,6 @@ export default Backbone.View.extend({
 
 	new : function () {
 		var newModel = new Ticket();
-		console.log('newModel', newModel);
 		this.reset(newModel);
 	},
 
@@ -39,6 +38,7 @@ export default Backbone.View.extend({
 		this.model.set(data);
 	
 		if(this.model.isNew()){
+			this.model.set('date', moment().toISOString());
 			Backbone.trigger('save:new:ticket', this.model);
 		}
 
