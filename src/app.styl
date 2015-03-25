@@ -13,8 +13,8 @@ html, body, .panel
 	top 0
 	left 0
 	z-index 2
-	box-shadow 0 1px 20px 5px #444
-	background-color #FF0C4E
+	box-shadow 0 1px 30px 5px #999
+	background-color #444
 	
 	.btn-group
 		width 100%
@@ -22,20 +22,25 @@ html, body, .panel
 	.btn
 		border-radius 0
 		height 100%
-		width 50%
+		width 85%
 		height 60px
 		font-size 20px
-		background-color #FF0C4E
-		border-color #F80447
+		background-color #444
+		border-color #333
 		transition all .3s linear
 
+		&:nth-child(2)
+			font-size 40px
+			padding-top 0
+			width 15%
+			
 		&:hover
 			background-color white
 			color #FF0C4E
 			border-color white
 	
 .panel
-	margin-top 70px	
+	margin-top 100px	
 	border none
 
 .panel-body
@@ -120,3 +125,15 @@ html, body, .panel
 .badge-accepted
 	background-color #68A2D4
 
+@media screen and (min-width: 1200px)
+		
+	#main-menu
+		width 70%
+		margin 0 15%
+	
+	.panel
+		width 70%
+		margin-left 15%
+		margin-right 15%
+		
+	
