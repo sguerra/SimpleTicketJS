@@ -1,7 +1,7 @@
-Envy
+Ticket JS
 ================
 
-Lexsys Author code project.
+Simple Ticket service.
 
 ## Quick start
 

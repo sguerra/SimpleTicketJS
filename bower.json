@@ -5,6 +5,8 @@
   "dependencies": {
     "bootstrap": "~3.3.2",
     "lodash": "~3.3.0",
-    "backbone": "~1.1.2"
+    "backbone": "~1.1.2",
+    "firebase": "~2.2.3",
+    "backbonefire": "~0.5.1"
   }
 }
