@@ -1,5 +1,6 @@
 import Ticket from '../../model/model';
 import UserCollection from '../../model/user/collection';
+import BranchCollection from '../../model/branch/collection';
 
 export default Backbone.View.extend({
 	
@@ -13,25 +14,36 @@ export default Backbone.View.extend({
 	initialize : function () {
 
 		this.$requesterSelect = this.$('#requester');
+		this.$branchSelect = this.$('#branch');
 
 		this.listenTo(Backbone, 'load:ticket:detail', this.reset);
 		this.listenTo(Backbone, 'new:ticket', this.new);
 
 		this.users = new UserCollection();
-		this.listenTo(this.users, 'sync', this.loadSelect);
+		this.listenTo(this.users, 'sync', this.loadUsersSelect);
+
+		this.branches = new BranchCollection();
+		this.listenTo(this.branches, 'sync', this.loadBranchesSelect);
+
+		BranchCollection
 
 		this.toggle(false);
 		
 	},
 
-	loadSelect()
+	loadUsersSelect()
 	{
 		this.users.each((user)=>{
-
 			this.$requesterSelect.append(`<option value="${user.get('name')}">${user.get('name')}</option>`);
-
 		});
 
+	},
+
+	loadBranchesSelect()
+	{
+		this.branches.each((branch)=>{
+			this.$branchSelect.append(`<option value="${branch.get('name')}">${branch.get('name')}</option>`);
+		});
 	},
 
 	reset : function (model) {
@@ -44,6 +56,11 @@ export default Backbone.View.extend({
 
 	new : function () {
 		var newModel = new Ticket();
+
+		newModel.set('status', 'open');
+
+		this.$('input:first').focus();
+
 		this.reset(newModel);
 	},
 
