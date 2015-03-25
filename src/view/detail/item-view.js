@@ -30,6 +30,7 @@ export default Backbone.View.extend({
 		this.model.set(data);
 		
 		this.model.save();
+		Backbone.trigger('show:tickets:list');
 	},
 
 	cancel : function () {
