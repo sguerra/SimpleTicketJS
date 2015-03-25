@@ -1,4 +1,5 @@
 import Ticket from '../../model/model';
+import UserCollection from '../../model/user/collection';
 
 export default Backbone.View.extend({
 	
@@ -11,11 +12,26 @@ export default Backbone.View.extend({
 
 	initialize : function () {
 
+		this.$requesterSelect = this.$('#requester');
+
 		this.listenTo(Backbone, 'load:ticket:detail', this.reset);
 		this.listenTo(Backbone, 'new:ticket', this.new);
 
+		this.users = new UserCollection();
+		this.listenTo(this.users, 'sync', this.loadSelect);
+
 		this.toggle(false);
 		
+	},
+
+	loadSelect()
+	{
+		this.users.each((user)=>{
+
+			this.$requesterSelect.append(`<option value="${user.get('name')}">${user.get('name')}</option>`);
+
+		});
+
 	},
 
 	reset : function (model) {
