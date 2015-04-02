@@ -12,17 +12,20 @@ export default Backbone.View.extend({
 		this.listenTo(Backbone, 'load:ticket:detail new:ticket', function () {
 			this.toggle(false);
 		});
+		this.listenTo(Backbone, 'user:logoff', function () {
+			this.toggle(false);
+		});
 
 		this.listenTo(Backbone, 'show:tickets:list', function () {
 			this.toggle(true);
 		});
-
 
 		this.listenTo(Backbone, 'save:new:ticket', this.saveNew);
 
 		this.listenTo(this.collection, 'add', this.addOne);
 		this.listenTo(this.collection, 'reset', this.addAll);
 
+		this.toggle(false);
 	},
 
 	saveNew : function (newModel) {

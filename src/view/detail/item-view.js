@@ -25,14 +25,14 @@ export default Backbone.View.extend({
 		this.branches = new BranchCollection();
 		this.listenTo(this.branches, 'sync', this.loadBranchesSelect);
 
-		BranchCollection
-
 		this.toggle(false);
 		
 	},
 
 	loadUsersSelect()
 	{
+		return;
+		
 		this.users.each((user)=>{
 			this.$requesterSelect.append(`<option value="${user.get('name')}">${user.get('name')}</option>`);
 		});
