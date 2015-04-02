@@ -1,10 +1,16 @@
 
 export default Backbone.Model.extend({
 	
-	defaults: {
+	defaults: { 
+		title: '' ,
+		description: '',
+		branch: '',
+		requester: '',
+		email: '',
 		name: '',
 		phone: '',
-		email: ''
+		date: '',
+		status: 'open'
 	}
 
 });
