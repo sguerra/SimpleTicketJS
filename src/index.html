@@ -34,35 +34,47 @@
           <legend> Ticket </legend>
 
           <div class="form-group">
-            <label for="title">Titulo</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Titulo" value="" required>
+            <label for="title">Título</label>
+            <span class="label label-default pull-right"> * obligatorio </span>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="" required>
           </div>
 
           <div class="form-group">
             <label for="description">Descripción</label>
-            <textarea name="description" id="description" placeholder="Descripción" class="form-control"></textarea>
+            <span class="label label-default pull-right"> * obligatorio </span>
+            <textarea name="description" id="description" placeholder="Descripción" class="form-control" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="comment">Observaciones</label>
+            <span class="label label-danger pull-right"> * sólo por personal de Soluciones Confiables </span>
+            <textarea name="comment" id="comment" placeholder="Observaciones" class="form-control"></textarea>
           </div>
 
           <legend> Reporta </legend>
 
           <div class="form-group">
             <label for="requester">Nombre</label>
+            <span class="label label-default pull-right"> * obligatorio </span>
             <input type="text" class="form-control" id="requester" name="requester" placeholder="Nombre" value="" required>
           </div>
 
           <div class="form-group">
             <label for="branch">Sucursal</label>
+            <span class="label label-default pull-right"> * obligatorio </span>
             <select id="branch" name="branch" class="form-control" required>
             </select>
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
+            <span class="label label-default pull-right"> * obligatorio </span>
             <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="" required>
           </div>
           
           <div class="form-group">
             <label for="phone">Teléfono</label>
+            <span class="label label-default pull-right"> * obligatorio </span>
             <input type="text" class="form-control" id="phone" name="phone" placeholder="Teléfono" value="" required>
           </div>
           
