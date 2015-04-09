@@ -3,7 +3,11 @@
 <div class="text-wrapper">
   <small>{{date}}</small>
   <strong>{{title}}</strong><br>
-  {{description}}
+  {{description}} 
+  
+  {{#if comment}} 
+    <text style="color:#999;"> <i>:: {{comment}}</i> </text>
+  {{/if}}
 </div>
 <div class="overlay">
   <div class="status open" data-value="open">
