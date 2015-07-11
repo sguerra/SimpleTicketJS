@@ -20,3 +20,7 @@ bower install
 npm install -g gulp
 gulp
 ```
+
+## Preview
+
+<img src="./TicketJS.png" style="width: 90%; box-shadow: 0 0 20px #999; margin-left: 5%"/>
